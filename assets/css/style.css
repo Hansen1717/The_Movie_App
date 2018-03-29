@@ -1,0 +1,31 @@
+body {
+    background: #000000;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.header {
+    background-color: #4717F6;
+    border-bottom: 15px solid #1a0858;
+}
+
+h1 {font-family: 'Lobster', cursive;
+    color: #e7dfdd;
+    font-size: 50px;
+    margin-bottom: 0;
+}
+
+h2 {
+    font-family: 'Lobster', cursive;
+    color: #e7dfdd;
+    font-size: 25px;
+}
+.pure-form {
+    padding-top: 2%;
+}
+
+.pure-button-primary {
+    background-color: #4717F6;
+}
