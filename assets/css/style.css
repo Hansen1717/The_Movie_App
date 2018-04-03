@@ -70,6 +70,7 @@ navbar-header{
 .header {
   background-color: #4717F6;
   border-bottom: 12px solid #1a0858;
+  margin-bottom: 15px;
 }
 
 .btn-primary, .btn-primary:active {
