@@ -131,6 +131,24 @@ h2 {
     color: inherit;
     background-color: #282828;
 }
+
+.panel-default>.panel-heading {
+    background-color: #1a0858;
+    border-bottom: 3px solid #4717F6;
+    font-family: 'Lobster', cursive;
+    color: #e7dfdd;
+    font-size: 24px;    
+}
+
+.panel-body {
+    font-size: 20px;
+}
+
+.title-span {
+    font-style: italic;
+    font-weight: bold;
+}
+
   
   @media(min-width:960px){
     #movies .col-md-3 .well{
