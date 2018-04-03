@@ -7,24 +7,24 @@
     <title>The Movie App</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
     <script src="assets/javascript/main.js"></script>
 </head>
 
 <body>
-    <div class="pure-g">
-        <div class="pure-u-1 header text-center">
+    <div class="container-fluid">
+        <div class="page-header text-center">
             <h1>The Movie App</h1>
             <h2>Everything you need to know about the movies you love</h2>
         </div>
-        <div class="pure-u-1 text-center">
-            <form class="pure-form">
-                <fieldset>
-                    <input id="movie-search" class="pure-input-1-2" type="text" placeholder="Search the Movie Database...">
-                    <button class="pure-button pure-button-primary">Search</button>
-                </fieldset>
+        <div class="text-center">
+            <form class="form-inline">
+                <div class="form-group">
+                    <input id="movie-search" type="text" class="form-control" placeholder="Search the Movie Database...">
+                </div>
+                <button type="submit" class="btn btn-primary">Search</button>
             </form>
         </div>
     </div>
