@@ -73,6 +73,10 @@ navbar-header{
   margin-bottom: 15px;
 }
 
+.movie-page-header{
+  margin-left: 2%;
+}
+
 .btn-primary, .btn-primary:active {
   color: #ffffff;
   background-color: #2a0d93;
