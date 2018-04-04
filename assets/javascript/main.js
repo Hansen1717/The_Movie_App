@@ -40,7 +40,6 @@ function movieSelected(id){
 }
 
 function getMovie(){
-debugger;
 
 let movieId = sessionStorage.getItem('movieId');
   axios.get('https://www.omdbapi.com?i='+ movieId +'&apikey=thewdb')
@@ -52,22 +51,26 @@ let movieId = sessionStorage.getItem('movieId');
             <img src="${movie.Poster}" class="thumbnail">
           </div>
           <div class="col-md-8">
-            <ul class="list-group">
-              <li class="list-group-item"><h1>${movie.Title}</h1></li>
-              <li class="list-group-item"><strong>Genre:&nbsp;&nbsp; </strong> ${movie.Genre}</li>
-              <li class="list-group-item"><strong>Language:&nbsp;&nbsp; </strong> ${movie.Language}</li>              
-              <li class="list-group-item"><strong>Released On:&nbsp;&nbsp; </strong> ${movie.Released}</li>
-              <li class="list-group-item"><strong>Rated:&nbsp;&nbsp; </strong> ${movie.Rated}</li>
-              <li class="list-group-item"><strong>Run Time:&nbsp;&nbsp; </strong> ${movie.Runtime}</li>
-              <li class="list-group-item"><strong>IMDB Rating:&nbsp;&nbsp; </strong> ${movie.imdbRating}</li>
-              <li class="list-group-item"><strong>Director:&nbsp;&nbsp; </strong>  ${movie.Director}</li>
-              <li class="list-group-item"><strong>Writer:&nbsp;&nbsp; </strong>  ${movie.Writer}</li>          
-              <li class="list-group-item"><strong>DVD Released On:&nbsp;&nbsp; </strong>  ${movie.DVD}</li>     
-              <li class="list-group-item"><strong>Production:&nbsp;&nbsp;</strong> ${movie.Production}</li>    
-              <li class="list-group-item"><strong>Awards:&nbsp;&nbsp;</strong> ${movie.Awards}</li>     
+          <div class="panel panel-default text-center">
+          <div id="review-heading-0" class="panel-heading">${movie.Title}</div>
+            <div id="review-body-0" class="panel-body">
+              <ul class="list-group">
+
+                <li class="list-group-item"><strong>Genre:&nbsp;&nbsp; </strong> ${movie.Genre}</li>
+                <li class="list-group-item"><strong>Language:&nbsp;&nbsp; </strong> ${movie.Language}</li>              
+                <li class="list-group-item"><strong>Released On:&nbsp;&nbsp; </strong> ${movie.Released}</li>
+                <li class="list-group-item"><strong>Rated:&nbsp;&nbsp; </strong> ${movie.Rated}</li>
+                <li class="list-group-item"><strong>Run Time:&nbsp;&nbsp; </strong> ${movie.Runtime}</li>
+                <li class="list-group-item"><strong>IMDB Rating:&nbsp;&nbsp; </strong> ${movie.imdbRating}</li>
+                <li class="list-group-item"><strong>Director:&nbsp;&nbsp; </strong>  ${movie.Director}</li>
+                <li class="list-group-item"><strong>Writer:&nbsp;&nbsp; </strong>  ${movie.Writer}</li>          
+                <li class="list-group-item"><strong>DVD Released On:&nbsp;&nbsp; </strong>  ${movie.DVD}</li>     
+                <li class="list-group-item"><strong>Production:&nbsp;&nbsp;</strong> ${movie.Production}</li>    
+                <li class="list-group-item"><strong>Awards:&nbsp;&nbsp;</strong> ${movie.Awards}</li>     
  
               <li class="list-group-item"><hr><a href="index.html" class="btn btn-primary">Go Back To Search</a></li>                                                    
             </ul>
+            </div>
           </div>
         </div>
          `;
