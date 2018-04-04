@@ -40,7 +40,6 @@ function movieSelected(id){
 }
 
 function getMovie(){
-debugger;
 
 let movieId = sessionStorage.getItem('movieId');
   axios.get('https://www.omdbapi.com?i='+ movieId +'&apikey=thewdb')

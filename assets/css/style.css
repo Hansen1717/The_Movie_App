@@ -62,7 +62,7 @@ a {
 }
 
 
-navbar-header{
+navbar-header {
   background-color: #2a0d93;
   color: #ffffff;
 }
@@ -71,6 +71,18 @@ navbar-header{
   background-color: #4717F6;
   border-bottom: 12px solid #1a0858;
   margin-bottom: 15px;
+}
+
+a:focus, a:hover {
+  color: #fff;
+}
+
+.nav>li>a:focus, .nav>li>a:hover {
+  background-color: #1a0858;
+}
+
+.nav>li>a {
+  font-size: 20px;
 }
 
 .movie-page-header{
@@ -96,7 +108,6 @@ h1 {font-family: 'Lobster', cursive;
 }
 
 h2 {
-  font-family: 'Lobster', cursive;
   color: #e7dfdd;
   font-size: 20px;
 }
