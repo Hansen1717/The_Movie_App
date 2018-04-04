@@ -67,8 +67,6 @@ let movieId = sessionStorage.getItem('movieId');
                 <li class="list-group-item"><strong>DVD Released On:&nbsp;&nbsp; </strong>  ${movie.DVD}</li>     
                 <li class="list-group-item"><strong>Production:&nbsp;&nbsp;</strong> ${movie.Production}</li>    
                 <li class="list-group-item"><strong>Awards:&nbsp;&nbsp;</strong> ${movie.Awards}</li>     
- 
-              <li class="list-group-item"><hr><a href="index.html" class="btn btn-primary">Go Back To Search</a></li>                                                    
             </ul>
             </div>
           </div>
