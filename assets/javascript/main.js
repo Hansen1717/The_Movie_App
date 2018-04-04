@@ -51,8 +51,8 @@ let movieId = sessionStorage.getItem('movieId');
             <img src="${movie.Poster}" class="thumbnail">
           </div>
           <div class="col-md-8">
-          <div class="panel panel-default text-center">
-          <div id="review-heading-0" class="panel-heading">${movie.Title}</div>
+          <div class="panel panel-default">
+          <div id="review-heading-0" class="panel-heading text-center">${movie.Title}</div>
             <div id="review-body-0" class="panel-body">
               <ul class="list-group">
 
