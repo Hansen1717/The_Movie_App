@@ -42,6 +42,8 @@ $(document).ready(function(){
       axios.get("https://www.omdbapi.com?i=" + movieId + "&apikey=thewdb")
         .then(res => {
           let movie = res.data;
+          let movieName=movie.Title;
+          sessionStorage.setItem('movieName', movieName);
           let output = `
           <div class="row">
             <div class="panel panel-default">
