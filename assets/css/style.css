@@ -167,6 +167,13 @@ h2 {
     font-weight: bold;
 }
 
+.img-thumbnail {
+  width: 50%;
+  height: auto;
+  background-color: #4717F6;
+  border: 2px solid #1a0858;
+}
+
   
   @media(min-width:960px){
     #movies .col-md-3 .well{
@@ -175,5 +182,5 @@ h2 {
   
     #movies .col-md-3 img{
       height:240px;
-    }
+    }    
   }
