@@ -8,7 +8,7 @@ $(document).ready(function(){
   
     function getMovies(searchText) {
       axios
-        .get("https://omdbapi.com?s=" + searchText + "&apikey=thewdb")
+        .get("https://omdbapi.com?s=" + searchText + "&apikey=trilogy")
         .then(res => {
           let movies = res.data.Search;
           let output = "";
@@ -39,7 +39,7 @@ $(document).ready(function(){
   
     function getMovie() {
       let movieId = sessionStorage.getItem("movieId");
-      axios.get("https://www.omdbapi.com?i=" + movieId + "&apikey=thewdb")
+      axios.get("https://www.omdbapi.com?i=" + movieId + "&apikey=trilogy")
         .then(res => {
           let movie = res.data;
           let movieName=movie.Title;
