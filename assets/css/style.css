@@ -90,6 +90,11 @@ a:focus, a:hover {
   margin-left: 2%;
 }
 
+.movie-title{
+  color: #e7dfdd;
+  font-size: 40px;
+}
+
 .btn-primary, .btn-primary:active {
   color: #ffffff;
   background-color: #2a0d93;
