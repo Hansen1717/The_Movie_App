@@ -79,6 +79,3 @@ let movieId = sessionStorage.getItem('movieId');
       console.log(err);
     });
 }
-//            <a href="#" class="btn btn-primary">View&nbsp;${movie.Title}&nbsp;Trailer</a>
-//<a href="#" class="btn btn-primary">Buy ${movie.Title} DVD</a>    
-//<a href="http://imdb.com/title/${movie.imdbID}" target="_blank" class="btn btn-primary">View IMDB</a>
