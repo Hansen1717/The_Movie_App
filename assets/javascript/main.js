@@ -1,20 +1,9 @@
-$(document).ready(function(){
-  //test
-    $('input:text').removeData;
-    window.localStorage.clear("searchText");
-  
+$(document).ready(function(){ 
     $("#searchBtn").on("click", function(event) {
       let searchText = $("#searchText").val();
       getMovies(searchText);
       event.preventDefault();
     });    
-  
-  //test
-    $('input:text').focus(
-      function(){
-          $(this).val('');
-      });
-  
   });
   
     function getMovies(searchText) {
@@ -66,7 +55,6 @@ $(document).ready(function(){
                   <li class="list-group-item">Genre:&nbsp; ${movie.Genre}</li>
                   <li class="list-group-item">Language:&nbsp; ${movie.Language}</li>              
                   <li class="list-group-item">Released On:&nbsp; ${movie.Released}</li>            
-                  <li class="list-group-item">IMDB Rating:&nbsp; ${movie.Ratings[0].Value}</li>
                   <li class="list-group-item">Run Time:&nbsp; ${movie.Runtime}</li>
                   <li class="list-group-item">Writer:&nbsp; ${movie.Writer}</li>                   
                   <li class="list-group-item">Director:&nbsp; ${movie.Director}</li>       
