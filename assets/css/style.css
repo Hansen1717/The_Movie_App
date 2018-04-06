@@ -112,6 +112,12 @@ h2 {
   color: #e7dfdd;
   font-size: 20px;
 }
+
+.active {
+  background-color: #1a0858;
+  color: #fff;  
+ }
+ 
 .pure-form {
   padding-top: 2%;
 }
