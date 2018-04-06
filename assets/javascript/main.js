@@ -1,60 +1,78 @@
-$(document).ready(function(){ 
+$(document).ready(function() {
   $("#searchBtn").on("click", function(event) {
     let searchText = $("#searchText").val();
-    getMovies(searchText);
-    event.preventDefault();
-  });    
+    if (searchText === "") {
+      let output = `
+        <div class="panel panel-default">
+        <div id="review-body-0" class="panel-body">
+          <div class = "col-sm-12">
+            <div class="well text-center">
+              <h2>Please fill out the Movie Name.</h5>
+            </div>
+          </div>  
+        </div>
+      </div>   
+    `;
+
+      $("#movies").html(output);
+      return false;
+    } else {
+      getMovies(searchText);
+      event.preventDefault();
+    }
+  });
 });
 
-  function getMovies(searchText) {
-    axios
-      .get("https://omdbapi.com?s=" + searchText + "&apikey=trilogy")
-      .then(res => {
-        let movies = res.data.Search;
-        let output = "";
-        $.each(movies, (index, movie) => {
+function getMovies(searchText) {
+  axios
+    .get("https://omdbapi.com?s=" + searchText + "&apikey=trilogy")
+    .then(res => {
+      let movies = res.data.Search;
+      let output = "";
+      $.each(movies, (index, movie) => {
+        let moviePoster = movie.Poster;
+        if (moviePoster === "N/A") {
+          moviePoster = "assets/images/movie_info.jpg";
+        }
 
-          let moviePoster=movie.Poster;          
-          if (moviePoster === 'N/A'){
-            moviePoster = "assets/images/movie_info.jpg";
-          }
-
-          output += `
+        output += `
           <div class = "col-md-3">
             <div class="well text-center">
               <img src="${moviePoster}">
               <h5>${movie.Title}</h5>
-              <a onclick ="movieSelected('${movie.imdbID}')" class="btn btn-primary"
+              <a onclick ="movieSelected('${
+                movie.imdbID
+              }')" class="btn btn-primary"
                 href="#">Details</a>
             </div>
           </div>
         `;
-        });
-        $("#movies").html(output);
       });
-  }
+      $("#movies").html(output);
+    });
+}
 
-  function movieSelected(id) {
-    sessionStorage.setItem("movieId", id);
-    window.location = "movie_info.html";
-    return false;
-  }
+function movieSelected(id) {
+  sessionStorage.setItem("movieId", id);
+  window.location = "movie_info.html";
+  return false;
+}
 
-  function getMovie() {
-    let movieId = sessionStorage.getItem("movieId");
-    debugger;
-    axios.get("https://www.omdbapi.com?i=" + movieId + "&apikey=trilogy")
-      .then(res => {
-        let movie = res.data;
-        let movieName=movie.Title;
+function getMovie() {
+  let movieId = sessionStorage.getItem("movieId");
+  axios
+    .get("https://www.omdbapi.com?i=" + movieId + "&plot=full&apikey=trilogy")
+    .then(res => {
+      let movie = res.data;
+      let movieName = movie.Title;
 
-        let moviePoster=movie.Poster;          
-        if (moviePoster === 'N/A'){
-          moviePoster = "assets/images/movie_info.jpg";
-        }
+      let moviePoster = movie.Poster;
+      if (moviePoster === "N/A") {
+        moviePoster = "assets/images/movie_info.jpg";
+      }
 
-        sessionStorage.setItem('movieName', movieName);
-        let output = `
+      sessionStorage.setItem("movieName", movieName);
+      let output = `
         <div class="row">
           <div class="panel panel-default">
             <div id="review-body-0" class="panel-body">
@@ -65,26 +83,40 @@ $(document).ready(function(){
               <ul class="list-group">
                 <li class="list-group-item movie-title">${movie.Title}</li>     
                 <li class="list-group-item">Rated:&nbsp; ${movie.Rated}</li>    
-                <li class="list-group-item">Released On:&nbsp; ${movie.Released}</li>                           
+                <li class="list-group-item">Released On:&nbsp; ${
+                  movie.Released
+                }</li>                           
                 <li class="list-group-item">Genre:&nbsp; ${movie.Genre}</li>
-                <li class="list-group-item">Language:&nbsp; ${movie.Language}</li>              
-                <li class="list-group-item">Run Time:&nbsp; ${movie.Runtime}</li>
-                <li class="list-group-item">Writer:&nbsp; ${movie.Writer}</li>                   
-                <li class="list-group-item">Director:&nbsp; ${movie.Director}</li>          
-                <li class="list-group-item">Production:&nbsp; ${movie.Production}</li>    
-                <li class="list-group-item">Awards:&nbsp; ${movie.Awards}</li>   
-                <li class="list-group-item">Actors:&nbsp; ${movie.Actors}</li>                      
-                <li class="list-group-item">Plot:&nbsp; ${movie.Plot}</li>                   
+                <li class="list-group-item">Language:&nbsp; ${
+                  movie.Language
+                }</li>              
+                <li class="list-group-item">Run Time:&nbsp; ${
+                  movie.Runtime
+                }</li>
+                <li class="list-group-item">Writer:&nbsp; ${
+                  movie.Writer
+                }</li>                   
+                <li class="list-group-item">Director:&nbsp; ${
+                  movie.Director
+                }</li>          
+                <li class="list-group-item">Production:&nbsp; ${
+                  movie.Production
+                }</li>    
+                <li class="list-group-item">Awards:&nbsp; ${
+                  movie.Awards
+                }</li>   
+                <li class="list-group-item">Actors:&nbsp; ${
+                  movie.Actors
+                }</li>                      
+                <li class="list-group-item">Plot:&nbsp; ${
+                  movie.Plot
+                }</li>                   
             </ul>
             </div>
           </div>
         </div>
          `;
 
-        $("#movie").html(output);
-      });
-  }
-
-
-
-
+      $("#movie").html(output);
+    });
+}
