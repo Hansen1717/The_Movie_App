@@ -36,21 +36,28 @@ $(document).ready(function(){
 
   function getMovie() {
     let movieId = sessionStorage.getItem("movieId");
+    debugger;
     axios.get("https://www.omdbapi.com?i=" + movieId + "&apikey=trilogy")
       .then(res => {
         let movie = res.data;
         let movieName=movie.Title;
+
+        let moviePoster=movie.Poster;          
+        if (moviePoster === 'N/A'){
+          moviePoster = "assets/images/movie_info.jpg";
+        }
+
         sessionStorage.setItem('movieName', movieName);
         let output = `
         <div class="row">
           <div class="panel panel-default">
             <div id="review-body-0" class="panel-body">
             <div class="col-md-4">
-            <img src="${movie.Poster}" class="thumbnail">
+            <img src="${moviePoster}" class="thumbnail">
           </div>
           <div class="col-md-8"> 
               <ul class="list-group">
-                <li class="list-group-item movie-title">${movieName}</li>     
+                <li class="list-group-item movie-title">${movie.Title}</li>     
                 <li class="list-group-item">Rated:&nbsp; ${movie.Rated}</li>    
                 <li class="list-group-item">Released On:&nbsp; ${movie.Released}</li>                           
                 <li class="list-group-item">Genre:&nbsp; ${movie.Genre}</li>
