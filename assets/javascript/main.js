@@ -13,10 +13,16 @@ $(document).ready(function(){
         let movies = res.data.Search;
         let output = "";
         $.each(movies, (index, movie) => {
+
+          let moviePoster=movie.Poster;          
+          if (moviePoster === 'N/A'){
+            moviePoster = "assets/images/movie_info.jpg";
+          }
+
           output += `
           <div class = "col-md-3">
             <div class="well text-center">
-              <img src="${movie.Poster}">
+              <img src="${moviePoster}">
               <h5>${movie.Title}</h5>
               <a onclick ="movieSelected('${movie.imdbID}')" class="btn btn-primary"
                 href="#">Details</a>
