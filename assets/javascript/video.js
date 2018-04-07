@@ -4,7 +4,7 @@ var final_id = "";
 function havefinal() {
   //first ajax call to get the movie id
   var queryURL =
-    " http://api.themoviedb.org/3/search/movie?api_key=73e53def52ff9a718eda18d64097f3bc&query=" +
+    " https://api.themoviedb.org/3/search/movie?api_key=73e53def52ff9a718eda18d64097f3bc&query=" +
     movieName;
   $.ajax({
     url: queryURL,
