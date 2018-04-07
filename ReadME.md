@@ -21,7 +21,7 @@ Application that searches a movie.
 
 ### APIs to be Used
 - Omdb, 
-- TheMovieDB.
+- TheMovieDB,
 - formspree.io
 
 ### Rough Breakdown of Tasks
@@ -37,8 +37,8 @@ Application that searches a movie.
     - Css associated with navbar and assigned pages.
     - Navbar intro
 - Purvam Chokshi
-    - YouTube Trailers page.
+    - YouTube Trailers and videos page.
     - Associated Javascript.
     - Css associated with assigned pages.
-    - Email using php for contact us page.
+    - Email using formspree for contact us page.
     - Javascript for the contact us page.
