@@ -22,6 +22,7 @@ Application that searches a movie.
 ### APIs to be Used
 - Omdb, 
 - TheMovieDB.
+- formspree.io
 
 ### Rough Breakdown of Tasks
 - Bryan Hansen
@@ -30,7 +31,7 @@ Application that searches a movie.
     - Git Repo.
     - Css associated with navbar and assigned pages.
 - Radhika Gupta
-    - Description page
+    - Search and Description page
     - Associated Javascript
     - Search page movie list creation javascript/jquery.
     - Css associated with navbar and assigned pages.
